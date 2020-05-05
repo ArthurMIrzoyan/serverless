@@ -1,0 +1,23 @@
+service: serverless
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+functions:
+  simple:
+    handler: handler.simple
+    events:
+      - http:
+          path: /simple
+          method: get
+          cors: true
+      - http:
+          path: /simple
+          method: post
+          cors: true
+      - http:
+          path: /simple
+          method: patch
+          cors: true
+  
